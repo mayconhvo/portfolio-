@@ -323,29 +323,31 @@
            REGRAS DE RESPONSIVIDADE PARA CELULAR (Telas até 768px)
            ======================================================= */
         @media (max-width: 768px) {
-            /* DESLIGANDO OS 3 VILÕES DO TRAVAMENTO PARA CELULAR */
+            /* 1. OTIMIZAÇÃO E AJUSTE DO BRILHO AMARELO (Canto inferior direito) */
             body { 
-                animation: none !important; /* Congela a animação */
-                /* Fundo estático: Roxo muito escuro com brilho amarelo BEM suave no canto INFERIOR DIREITO */
-                background: radial-gradient(circle at 100% 100%, rgba(255, 215, 0, 0.02) 0%, rgba(14, 3, 26, 1) 50%, #030006 100%) !important;
+                animation: none !important; 
+                /* Brilho amarelo agora aparece na medida certa (0.15), concentrado no cantinho (35%) */
+                background: radial-gradient(circle at 100% 100%, rgba(255, 215, 0, 0.15) 0%, rgba(14, 3, 26, 1) 35%, #030006 100%) !important;
             }
             .item.cartao-frente { 
-                -webkit-box-reflect: none !important; /* Tira o reflexo */
+                -webkit-box-reflect: none !important; 
             }
             .sobre-content { 
-                backdrop-filter: none !important; /* Tira o vidro fosco */
-                background: rgba(10, 5, 20, 0.98) !important; /* Fundo sólido para dar leitura no texto */
+                backdrop-filter: none !important; 
+                background: rgba(10, 5, 20, 0.98) !important; 
             }
 
-            /* AJUSTES DE TAMANHO PARA CABER NA TELA (Mantidos) */
+            /* 2. TEXTO CENTRALIZADO */
             .header { top: 25px; width: 100%; text-align: center; }
             .header h1 { font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 6px; }
             .header p { font-size: 0.75rem; line-height: 1.4; padding: 0 15px; margin: 0 auto; }
 
-            .carousel { width: 270px; height: 152px; margin-top: 60px; }
+            /* 3. CARROSSEL MAIS PERTO DO TEXTO (Mudado para 25px) */
+            .carousel { width: 270px; height: 152px; margin-top: 25px; }
             .item-title { font-size: 0.95rem; }
             .item-overlay { padding: 12px; }
 
+            /* RESTANTE DOS AJUSTES MANTIDOS */
             .sobre-content {
                 flex-direction: column; gap: 20px; padding: 25px 20px;
                 max-width: 90%; max-height: 75vh; overflow-y: auto;
