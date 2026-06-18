@@ -319,20 +319,33 @@
             user-select: none;
         }
         .fechar-btn:hover { color: #ff4d4d; transform: scale(1.1); }
-        /* =======================================================
+       /* =======================================================
            REGRAS DE RESPONSIVIDADE PARA CELULAR (Telas até 768px)
            ======================================================= */
         @media (max-width: 768px) {
+            /* DESLIGANDO OS 3 VILÕES DO TRAVAMENTO PARA CELULAR */
+            body { 
+                animation: none !important; /* Congela a animação */
+                /* Fundo estático: Roxo muito escuro com brilho amarelo no canto */
+                background: radial-gradient(circle at 0% 0%, rgba(255, 215, 0, 0.08) 0%, rgba(14, 3, 26, 1) 40%, #030006 100%) !important;
+            }
+            .item.cartao-frente { 
+                -webkit-box-reflect: none !important; /* Tira o reflexo */
+            }
+            .sobre-content { 
+                backdrop-filter: none !important; /* Tira o vidro fosco */
+                background: rgba(10, 5, 20, 0.98) !important; /* Fundo sólido para dar leitura no texto */
+            }
+
+            /* AJUSTES DE TAMANHO PARA CABER NA TELA (Mantidos) */
             .header { top: 25px; }
             .header h1 { font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 6px; }
             .header p { font-size: 0.75rem; line-height: 1.4; padding: 0 15px; }
 
-            /* Diminui o tamanho do carrossel para caber na tela do celular */
             .carousel { width: 270px; height: 152px; margin-top: 60px; }
             .item-title { font-size: 0.95rem; }
             .item-overlay { padding: 12px; }
 
-            /* Transforma a seção sobre mim em uma coluna de cima para baixo */
             .sobre-content {
                 flex-direction: column; gap: 20px; padding: 25px 20px;
                 max-width: 90%; max-height: 75vh; overflow-y: auto;
